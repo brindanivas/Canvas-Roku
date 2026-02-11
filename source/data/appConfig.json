@@ -1,0 +1,29 @@
+{
+  "registryPrefix": "hbcugo",
+  "channel_id": "293",
+  "baseUrl": "https://1stud.io/api/channel_{0}/",
+  "rokuJsonVersion": "roku_json_v5",
+  "analyticsUrl": "http://app.channelalyzer.com/",
+  "vastUrl": "https://1stud.io/api/channel_293/vastcsai_roku_v2_json?cb={cb}&ua={ua}&dnt={dnt}&content_id={video_id}&content_episode={content_episode}&content_title={media_title}&content_series={series_title}&content_season={content_season}&content_genre={content_genre}&rating={video_rating}&language={language}&content_duration={content_duration}&content_len={content_len}&did={device_ifa}&us_privacy={us_privacy}&slot_type={slot_type}&os={os}&model={model}&osv={osv}&device_height={device_height}&device_width={device_width}&imp_video_height={player_height}&imp_video_width={player_width}&connection_type={connection_type}&category={category}&content_categories={content_categories}&content_type={content_type}&app_name={app_name}&page_url={page_url}&app_version={app_version}&vid_duration={vid_duration}&gdpr={GDPR}&gdpr_consent={CONSENT}&ifa_type={IFA_TYPE}&coppa={COPPA}&pod_ad_slots={POD_AD_SLOTS}&content_livestream={CONTENT_LIVESTREAM}&pos={Ad_Position}&device_type={device_type}&device_make={device_make}&device_model={model}&gpp={GPP_STRING}&gpp_sid={GPP_SID}",
+  "page_url": "https://hbcugo.tv/",
+  "app_bundle": "551357",
+  "app_store_url": "https://channelstore.roku.com/en-ot/details/fde22b5ad85192782c1fc9231673bfd0/hbcu-go-tv",
+  "showDetailPageForVideo": true,
+  "appid": "roku_hbcugo.ottstudio.com",
+  "perPageVideos": 10,
+  "perPageRows": 5,
+  
+  "isProduction": true,
+  "enableSegmentAnalytics": true,
+  "devSegmentWriteKey": "iNrUY7xp7CeegTUyRCEHxba64CcOtDbe",
+  "prodSegmentWriteKey": "8dmJzbB2DqNmaNoAEjIbDG2H450kMm9R",
+  
+  "enableOneTrust": true,
+  "oneTrustAppId": "0197eaf4-4962-74b4-9368-029dbaa126ff",
+  "oneTrustVersion": "202508.2.1",
+
+  "enableMediaMelon": true,
+  "mediaMelonID" : "1369112004",
+  "domainName": "https://hbcugo.tv",
+  "appname": "HBCU GO"
+}

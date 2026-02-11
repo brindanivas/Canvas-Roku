@@ -1,0 +1,18 @@
+{
+  "localMenu": [
+    {
+      "_id": 6,
+      "title": "",
+      "Icon": "pkg:/images/icons/search.png",
+      "playlist_layout": "Search"
+    },
+    {
+      "_id": 7,
+      "title": "",
+      "playlist_layout": "Settings",
+      "Icon": "pkg:/images/icons/settings.png",
+      "settings": [
+      ]
+    }
+  ]
+}
