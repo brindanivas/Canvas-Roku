@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<!--********** Copyright 2020 OneTrust.  All Rights Reserved. **********-->
+
+
+<component name="OTinitialize" extends="Group" >
+<interface>
+    <field id="eventlistener" type="node" alwaysNotify="true" />
+
+    <!-- list of cmp eventlisteners interface -->
+    <!--    <field id="dataDownloadSucess" type="assocarray" alwaysNotify="true"/>
+        <field id="OTConsentUpdated" type="assocarray" alwaysNotify="true"/>
+        <field id="onDeleteProfileCallback" type="assocarray" alwaysNotify="true"/>
+        <field id="onSwitchUserProfileCallback" type="assocarray" alwaysNotify="true"/>
+
+        <field id="onShowBanner" type="assocarray" alwaysNotify="true" /> 
+        <field id="onHideBanner" type="assocarray" alwaysNotify="true" /> 
+        <field id="onBannerClickedAcceptAll" type="assocarray" alwaysNotify="true" />
+        <field id="onBannerClickedRejectAll" type="assocarray" alwaysNotify="true" />
+        <field id="onBannerClickedClose" type="assocarray" alwaysNotify="true" />
+        <field id="onShowPreferenceCenter" type="assocarray" alwaysNotify="true" /> 
+        <field id="onHidePreferenceCenter" type="assocarray" alwaysNotify="true" /> 
+        <field id="onPreferenceCenterAcceptAll" type="assocarray" alwaysNotify="true" />
+        <field id="onPreferenceCenterRejectAll" type="assocarray" alwaysNotify="true" />
+        <field id="onPreferenceCenterConfirmChoices" type="assocarray" alwaysNotify="true" />
+         <field id="onPreferenceCenterClose" type="assocarray" alwaysNotify="true" />
+        <field id="onPreferenceCenterPurposeConsentChanged" type="assocarray" alwaysNotify="true" />
+        <field id="onPreferenceCenterPurposeLegitimateInterestChanged" type="assocarray" alwaysNotify="true" />
+        <field id="onShowVendorList" type="assocarray" alwaysNotify="true" /> 
+        <field id="onHideVendorList" type="assocarray" alwaysNotify="true" /> 
+        <field id="onVendorConfirmChoices" type="assocarray" alwaysNotify="true" />
+        <field id="onVendorListAcceptAll" type="assocarray" alwaysNotify="true" />
+        <field id="onVendorListRejectAll" type="assocarray" alwaysNotify="true" />
+        <field id="onVendorListVendorConsentChanged" type="assocarray" alwaysNotify="true" />
+        <field id="onVendorListVendorLegitimateInterestChanged" type="assocarray" alwaysNotify="true" />
+        <field id="onShowSDKList" type="assocarray" alwaysNotify="true" /> 
+        <field id="onHideSDKList" type="assocarray" alwaysNotify="true" /> 
+        <field id="onSDKListConfirmChoices" type="assocarray" alwaysNotify="true" />
+        <field id="onSDKListAcceptAll" type="assocarray" alwaysNotify="true" />
+        <field id="onSDKListRejectAll" type="assocarray" alwaysNotify="true" />
+        <field id="onSdkListSdkConsentChanged" type="assocarray" alwaysNotify="true" />
+        <field id="allSDKViewsDismissed" type="assocarray" alwaysNotify="true" />  -->
+
+    <function name="OTSdkParams" />
+    <function name="setupUI" />
+    <function name="showBannerUI" />
+    <function name="showPreferenceCenterUI" />
+    <function name="getBannerData" />
+    <function name="getPreferenceCenterData" />
+    <function name="isBannerShown" />
+    <function name="getConsentStatusForGroupID" />
+    <function name="clearOTSDK" />
+    <function name="getConsentStatusForSDKId" />
+    <function name="getConsentStatusForVendorId" />
+    <function name="shouldShowBanner" />
+    <function name="switchUserProfile" /> 
+    <function name="deleteProfile" /> 
+    <function name="getVendorCount"/>
+    <function name="getVendorListData"/>
+    <function name="getCurrentActiveProfile"/>
+    <function name="saveConsent"/>
+    <function name="updatePurposeConsent"/>
+    <function name="updatePurposeLegitInterest"/>
+    <function name="updateVendorConsent"/>
+    <function name="updateVendorLegitInterest"/>
+    <function name="startSDK"/>
+    <function name="renameProfile"/>
+</interface>
+<script type="text/brightscript" uri="../OTinitialize/OTinitialize.brs"></script>
+<script type="text/brightscript" uri="../OTCommon/OTConstants/application.constants.brs"></script>
+<script type="text/brightscript" uri="../OTCommon/OTUtilites/logs.brs"></script>
+<script type="text/brightscript" uri="../OTCommon/OTUtilites/utils.brs"></script>
+<script type="text/brightscript" uri="../OTCommon/OTUtilites/registry.brs"></script>
+
+<!-- cmp API utils -->
+<script type="text/brightscript" uri="../OTCommon/OTUtilites/bannerUtils.brs"></script>
+<script type="text/brightscript" uri="../OTCommon/OTUtilites/promise.brs"></script>
+<script type="text/brightscript" uri="../OTCommon/OTUtilites/style.brs"></script>
+<script type="text/brightscript" uri="../OTCommon/OTConstants/style.constants.brs"></script>
+<script type="text/brightscript" uri="../OTServices/OTStorage/serverStorageKeys.brs"></script>
+<script type="text/brightscript" uri="../OTCommon/OTUtilites/utils.brs"></script>
+<script type="text/brightscript" uri="../OTCommon/OTUtilites/network.brs"></script>
+<!-- cmp API Public methods -->
+</component>
