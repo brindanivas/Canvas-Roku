@@ -1,0 +1,11 @@
+<?rokuml verion="1.0" enoding="utf-8" ?>
+<component name="VideoPositionTask" extends="Task">
+    <script type="text/brightscript" uri="pkg:/source/helpers/HelpFuncs.brs"/>
+    <script type="text/brightscript" uri="pkg:/components/tasks/VideoPositionTask.brs"/>
+
+    <interface>
+          <field id="currentPosition" type="integer"/>
+          <field id="newPosition" type="integer"/>
+          <field id="videoId" type="string"/>
+    </interface>
+</component>

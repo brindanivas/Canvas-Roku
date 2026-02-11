@@ -1,0 +1,11 @@
+
+<?rokuml verion="1.0" enoding="utf-8" ?>
+<component name="UpdateProgressTask" extends="Task">
+    <script type="text/brightscript" uri="pkg:/source/helpers/HelpFuncs.brs"/>
+    <script type="text/brightscript" uri="pkg:/components/tasks/UpdateProgressTask.brs"/>
+
+    <interface>
+          <field id="rowList" type="node"/>
+          <field id="markUpGrid" type="node"/>
+    </interface>
+</component>

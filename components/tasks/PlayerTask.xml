@@ -1,0 +1,23 @@
+<?rokuml version="1.0" encoding="utf-8" ?>
+
+<!-- a Task handling the playback loop of both content abd ad -->
+<component name="PlayerTask" extends="Task">
+
+<script type="text/brightscript" uri="PlayerTask.brs" />
+<script type="text/brightscript" uri="pkg:/source/helpers/Globals.brs"/>
+<script type="text/brightscript" uri="pkg:/source/helpers/HelpFuncs.brs"/>
+
+  <interface>
+    <field id="video" type="node" />
+    <field id="vastURL" type="string" alwaysNotify="true" />
+    <field id="videodata" type="node" />
+    <field id="stopped" type="boolean" alwaysnotify="true" />
+    <field id="playingad" type="boolean" alwaysnotify="true" />
+    <field id="gettingUpdatedVastInProgress" type="boolean" alwaysnotify="true" />
+    <field id="getUpdatedVast" type="boolean" alwaysnotify="true" />
+    <field id="bookmark" type="float" />
+    <!-- <field id="currentPosition" type="integer" /> -->
+    <!-- <field id="currentState" type="string" /> -->
+  </interface>
+
+</component>

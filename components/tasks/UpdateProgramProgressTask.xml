@@ -1,0 +1,11 @@
+
+<?rokuml verion="1.0" enoding="utf-8" ?>
+<component name="UpdateProgramProgressTask" extends="Task">
+    <script type="text/brightscript" uri="pkg:/source/helpers/HelpFuncs.brs"/>
+    <script type="text/brightscript" uri="pkg:/components/tasks/UpdateProgramProgressTask.brs"/>
+
+    <interface>
+        <field id="epgGridContent" type="node" />
+        <field id="progressUpdated" type="boolean" alwaysNotify="true"/>
+    </interface>
+</component>

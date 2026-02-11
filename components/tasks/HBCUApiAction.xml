@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="HBCUApiAction" extends="Task"	xsi:noNamespaceSchemaLocation="https://devtools.web.roku.com/schema/RokuSceneGraph.xsd">
+    <script type="text/brightscript" uri="pkg:/components/tasks/HBCUApiAction.brs"/>
+
+    <script type="text/brightscript" uri="pkg:/source/apis/HBCUAPI.brs"/>
+    <script type="text/brightscript" uri="pkg:/source/apis/BaseRequests.brs"/>
+
+    <script type="text/brightscript" uri="pkg:/source/helpers/HelpFuncs.brs"/>
+    <script type="text/brightscript" uri="pkg:/source/helpers/Globals.brs"/>
+    <script type="text/brightscript" uri="pkg:/source/helpers/ContentHelper.brs"/>
+    <script type="text/brightscript" uri="pkg:/source/helpers/ContentHelper.brs"/>
+
+    <interface>
+        <!-- Input -->
+        <field id="requestData" type="assocArray"/>
+        <field id="searchData" type="string"/>
+        <field id="replacedVastUrl" type="string"/>
+        <field id="forMidroll" type="boolean"/>
+        <field id="callBack" type="string"/>
+        <field id="xmlUri" type="string"/>
+        <field id="positionObj" type="assocArray"/>
+        <field id="tabId" type="string"/>
+        <field id="program" type="assocarray"/>
+        <field id="sectionName" type="string"/>
+
+        <!-- Output -->
+        <field id="result" type="assocarray"/>
+
+        <!-- Additional Info -->
+        <field id="additionalParams" type="assocArray"/>
+    </interface>
+</component>
