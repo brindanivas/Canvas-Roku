@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<component name="DynamicPage" extends="Group">
+    <script type="text/brightscript" uri="pkg:/components/pages/DynamicPage/DynamicPage.brs"/>
+
+
+    <script type="text/brightscript" uri="pkg:/source/helpers/HelpFuncs.brs"/>
+    <script type="text/brightscript" uri="pkg:/source/helpers/FocusHandler.brs"/>
+    <script type="text/brightscript" uri="pkg:/source/helpers/ContentHelper.brs"/>
+    <script type="text/brightscript" uri="pkg:/source/helpers/Globals.brs"/>
+    <script type="text/brightscript" uri="pkg:/source/helpers/EventHelper.brs"/>
+
+    <interface>
+        <field id="content" type="node" OnChange="OnContentChange"/>
+        <field id="updateContent" type="array" OnChange="OnUpdateContentChange"/>
+        <field id="updateRowContent" type="array" OnChange="OnUpdateRowContentChange"/>
+        <field id="isLiveVideoPlay" type="boolean" value="false" alwaysNotify="true" OnChange="OnLiveVideoPlay"/>
+        <field id="downClick" type="boolean" value="false" alwaysNotify="true" onChange = "OnDownClick"/>
+        <field id="pageType" type="string"/>
+        <field id="datarray" type="AssocArray" alwaysNotify="true"/>
+        <field id="initialize" type="boolean" value="false" alwaysnotify="true" onChange="onInitialize"/>
+        <field id="destroy" type="boolean" value="false" alwaysnotify="true" onChange="onDestroy"/>
+        <field id="currentPage" type="integer" value="1"/>
+        <field id="currentRowPage" type="integer" value="1"/>
+        <field id="totalPlaylist" type="integer"/>
+        <field id="isApiLoaded" type="boolean"/>
+    </interface>
+
+    <children>
+      <Timer id="UpdateTimer" repeat="false" duration="10"/>
+      <Timer id="UpdateProgress" control="start" repeat="true" duration="60"/>
+
+      <Animation id="rowListAnimation" duration="0.5" repeat="false" easeFunction="linear" >
+
+        <Vector2DFieldInterpolator id = "transInterop" key="[0.0, 1.0]" />
+      </Animation>
+    </children>
+</component>

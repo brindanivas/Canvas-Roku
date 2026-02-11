@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<component name="BackgroundPlayer" extends="Video">
+    <script type="text/brightscript" uri="BackgroundPlayer.brs"/>
+
+    <script type="text/brightscript" uri="pkg:/source/helpers/HelpFuncs.brs"/>
+
+    <interface>
+        <field id="videoUrl" type="string" alwaysNotify="true" onChange="OnContentChange" />
+        <field id="initialize" type="boolean" value="false" alwaysnotify="true" onChange="onInitialize"/>
+        <field id="destroy" type="boolean" value="false" alwaysnotify="true" onChange="onDestroy"/>
+        <field id="stopPlayer" type="boolean" value="false" alwaysnotify="true" onChange="ClosePlayer"/>
+    </interface>
+
+    <children>
+
+    </children>
+</component>

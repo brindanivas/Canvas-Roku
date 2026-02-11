@@ -1,0 +1,34 @@
+<?xml version = "1.0" encoding = "utf-8" ?>
+
+
+
+<component name = "LoadingPage" extends = "Group" >
+
+  <interface >
+    <field id="width" type="integer" value="1920" />
+    <field id="height" type="integer" value="1080" />
+    <field id="initialize" type="boolean" value="false" alwaysnotify="true" onChange="onInitialize"/>
+    <field id="dotSize" type="integer" value="0" alwaysnotify="true" onChange="onDotSizeChange"/>
+  </interface>
+
+  <script type = "text/brightscript" uri = "LoadingPage.brs"/>
+
+  <children>
+    <Rectangle id="rBackground" width="1920" height="1080" color="#000000"/>
+
+      <LayoutGroup id="lgMain" layoutDirection="horiz" horizAlignment="custom" vertAlignment="custom" itemSpacings="[20,10,10,10]">
+      <Label id="lLoading" text="Loading" />
+        <Poster id="p1" opacity="0"/>
+        <Poster id="p2" opacity="0"/>
+        <Poster id="p3" opacity="0"/>
+      </LayoutGroup>
+
+      <Animation id="animation" duration="0.6" repeat="true" easeFunction="linear">
+          <FloatFieldInterpolator key= "[0, 0.30, 0.60, 0.90, 1]" keyValue= "[0, 1.0, 1.0, 1.0, 0]" fieldToInterp="p1.opacity"/>
+          <FloatFieldInterpolator key= "[0, 0.30, 0.60, 0.90, 1]" keyValue= "[0, 0, 1.0, 1.0, 0]" fieldToInterp="p2.opacity"/>
+          <FloatFieldInterpolator key= "[0, 0.30, 0.60, 0.90, 1]" keyValue= "[0, 0, 0, 1.0, 0]" fieldToInterp="p3.opacity"/>
+      </Animation>
+
+  </children>
+
+</component>

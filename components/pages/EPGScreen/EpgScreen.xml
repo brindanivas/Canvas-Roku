@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--********** Copyright 2016 Roku Corp.  All Rights Reserved. **********-->
+<component name="EpgScreen" extends="Group">
+    <script type="text/brightscript" uri="pkg:/components/pages/EpgScreen/EpgScreen.brs" />
+    <script type="text/brightscript" uri="pkg:/source/helpers/HelpFuncs.brs"/>
+    <script type="text/brightscript" uri="pkg:/source/helpers/FocusHandler.brs"/>
+    <interface>
+        <field id="content" type="node" alwaysNotify="true" onChange="OnContentChange"/>
+        <field id="destroy" type="boolean" alwaysNotify="true" onChange="destroy"/>
+        <field id="isApiLoaded" type="boolean" value="true"/>
+    </interface>
+
+    <children>
+        <Group id="categoryGrp">
+            <MarkupList
+                id = "categoryList"
+                translation = "[100,600]"
+                itemSize = "[300,60]"
+                numRows = "6"
+                itemSpacing = "[20,20]"
+                itemComponentName = "EpgCategoryItem"
+                wrapDividerHeight = "5"
+                itemClippingRect="[0,0,400,800]" >
+            </MarkupList>
+
+            <LayoutGroup id="" layoutDirection="horiz" translation="[510, 150]" itemSpacings="[10]">
+                <Label id="categoryName" width="336" horizAlign="left" />
+                <Label id="onNowText" text="On Now" width="500" horizAlign="left" />
+                <Label id="upNextText" text="Up Next" width="500" horizAlign="left" />
+            </LayoutGroup>
+            <Group id="liveMiniPlayerGrp">
+                <Poster id="liveMiniPlayerBorder" width="380" height="218" translation="[70, 195]" uri="pkg:/images/focus/5pxRoundRect.9.png" visible="false"/>
+                <label id="livePlayerLabel" width="370" wrap="true" maxLines="2" translation="[75, 423]" />
+            </Group>
+            <MarkupGrid
+                id = "epgGrid"
+                translation = "[500,190]"
+                itemSize = "[1500,140]"
+                numRows = "4"
+                itemSpacing = "[10,10]"
+                itemComponentName = "EpgGridItem"
+                sectionDividerHeight = "60"
+                drawFocusFeedback = "false"
+                itemClippingRect="[0, 0, 1500, 950]"
+                sectionDividerLeftOffset="10" >
+            </MarkupGrid>
+        </Group>
+        <Group id="noDataGrp" visible="false">
+            <Label id="noDataLabel" width="1920" height="930" translation="[0,150]" vertAlign="center" horizAlign="center" text="No data found."/>
+        </Group>
+        <Timer id="refreshTimer" duration="3" repeat="true"/>
+    </children>
+</component>

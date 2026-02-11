@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<component name="SettingPage" extends="Group">
+    <script type="text/brightscript" uri="pkg:/components/pages/SettingPage/SettingPage.brs"/>
+
+
+    <script type="text/brightscript" uri="pkg:/source/helpers/HelpFuncs.brs"/>
+    <script type="text/brightscript" uri="pkg:/source/helpers/FocusHandler.brs"/>
+    <script type="text/brightscript" uri="pkg:/source/helpers/ContentHelper.brs"/>
+
+    <interface>
+        <field id="content" type="node" OnChange="OnContentChange"/>
+        <field id="initialize" type="boolean" value="false" alwaysnotify="true" onChange="onInitialize"/>
+
+    </interface>
+
+    <children>
+        <Group>
+            <SideMenuComponent
+              id = "settingMenu"
+              translation = "[90,217]"
+              visible="true"/>
+            <LayoutGroup id="lgMain" translation="[574,378]" layoutDirection="horiz" horizAlignment="custom" vertAlignment="custom" itemSpacings="[50]" visible="false">
+                <Poster id="pQRCode" width="345" height="345" loadWidth="345" loadHeight="345" />
+                <LayoutGroup id="lgDescription" layoutDirection="vert" horizAlignment="left" vertAlignment="custom" itemSpacings="[50]">
+                    <Label id="lDescription" vertAlign="center" width="740" maxLines="2" wrap="true" visible="true"/>
+                    <Label id="lUrl" width="740"  maxLines="2" wrap="true" vertAlign="center" visible="true"/>
+                </LayoutGroup>
+            </LayoutGroup>
+            <LayoutGroup id="lgPrivacySettings" translation="[574,458]" layoutDirection="vert" horizAlignment="left" vertAlignment="bottom" itemSpacings="[30]" visible="false">
+                <Label id="lTitle" width="740" text="Privacy Settings" vertAlign="center" visible="true"/>
+                <Label id="lPSDescription" text="Customize how we handle your Cookies and Personal Data" width="1200" horizAlign="left" vertAlign="center"/>
+                <Poster id="bLetsGo" uri="pkg:/images/focus/filled.9.png" width="300" height="80">
+                    <Label id="lLetsGo" text="Let's go!" width="300" height="80" horizAlign="center" vertAlign="center"/>
+                </Poster>
+            </LayoutGroup>
+            <Group id="gInfo" translation="[1300,1000]" visible="true">
+                <MultiStyleLabel id="lDeviceId" horizAlign="left" vertAlign="center" text="" translation="[0,0]"/>
+                <MultiStyleLabel id="lVersionNo" horizAlign="left" vertAlign="center" text="" translation="[0,40]"/>
+            </Group>
+        </Group>
+  </children>
+</component>

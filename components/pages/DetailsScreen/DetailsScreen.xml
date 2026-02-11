@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--********** Copyright 2016 Roku Corp.  All Rights Reserved. **********-->
+<component name="DetailsScreen" extends="Group">
+    <script type="text/brightscript" uri="pkg:/components/pages/DetailsScreen/DetailsScreen.brs" />
+    <script type="text/brightscript" uri="pkg:/source/helpers/FocusHandler.brs"/>
+    <script type="text/brightscript" uri="pkg:/source/helpers/HelpFuncs.brs"/>
+    <script type="text/brightscript" uri="pkg:/source/helpers/EventHelper.brs"/>
+    <interface>
+        <field id="datarray" type="AssocArray" alwaysNotify="true" onChange="OnContentChange"/>
+    </interface>
+
+    <children>
+        <Rectangle color="#000000" width="1920" height="1080" translation="[0,0]" />
+        <Poster id="backgroundImage" height="1080" width="1920" loadHeight="56" loadWidth="100" loadDisplayMode="scaleToZoom" translation="[0,0]" />
+        <Poster id="rBackgroundOpacity" width="1920" height="1080" loadDisplayMode="scaleToZoom" uri="pkg:/images/focus/background_video_overlay.png" opacity="1" visible="true"/>
+        <Group id="gContentDetails">
+            <LayoutGroup id="lgDetails" layoutDirection="vert" vertAlignment="vert" translation="[110,238]" visible="false">
+            </LayoutGroup>
+            <Poster id="pbplay" uri="pkg:/images/focus/filled.9.png" blendColor="#FFFF00" width="236" height="96.4" translation="[110,600]">
+                <Poster id="pplayresume" uri="pkg:/images/icons/resume.png" blendColor="#000000" width="45" height="45" translation="[60,26]"/>
+                <Label id="lplay" text="Play" width="236" height="96.4" horizAlign="center" vertAlign="center" color="#FFFFFF" translation="[25,0]"/>
+            </Poster>
+            <Poster id="pbrestart" uri="pkg:/images/focus/filled.9.png" width="400" height="96.4" translation="[550,600]">
+                <Poster id="pResume" uri="pkg:/images/icons/play_image.png" blendColor="#000000" width="45" height="45" translation="[40,26]"/>
+                <Label id="lrestart" text="Play from beginning" width="400" height="96.4" horizAlign="center" vertAlign="center" color="#FFFFFF" translation="[20,0]"/>
+            </Poster>
+            <Poster id="pbTrailer" uri="pkg:/images/focus/filled.9.png" width="236" height="96.4" translation="[386,600]">
+                <Poster id="pTrailer" uri="pkg:/images/icons/play_image.png" blendColor="#000000" width="45" height="45" translation="[40,26]"/>
+                <Label id="lTrailer" text="Trailer" width="236" height="96.4" horizAlign="center" vertAlign="center" color="#FFFFFF" translation="[20,0]"/>
+            </Poster>
+            <MaskGroup id="borderMask" maskUri = "pkg:/images/focus/movie-big-mask.png" translation="[1430,188]" >
+                <Poster id="pVideoImage" height="600" width="400" loadHeight="600" loadWidth="400" uri="pkg:/images/others/default-movie.png" loadingBitmapUri="pkg:/images/others/default-movie.png" failedBitmapUri="pkg:/images/others/default-movie.png" loadDisplayMode="scaleToZoom"/>
+            </MaskGroup>
+        </Group>
+        <Group id="mainScenePreloaderGroup" visible="false">
+            <Rectangle translation="[0, 0]" width="1920" height="1080" opacity="0.8" color="#000000"/>
+            <BusySpinner id="mainScenePreloader" translation="[880, 400]" control="start" clockwise="true" spinInterval="0.8"/>
+            <Label id="mainScenePreloaderLbl" translation="[0, 600]" horizAlign="center" width="1920"/>
+        </Group>
+
+        <Animation id="RowListDownAnimation"
+           duration="0.3"
+           repeat="false"
+           easeFunction="linear">
+            <Vector2DFieldInterpolator id="vDownTranslation" key="[0.0, 1.0]" keyValue="[[75.0, 950.0], [75.0, 550.0]]" />
+            <Vector2DFieldInterpolator id="vDownContentTranslation" key="[0.0, 1.0]" keyValue="[[0.0, 0.0], [0.0, -400.0]]" fieldToInterp="gContentDetails.translation"/>
+            <FloatFieldInterpolator id="fDownContentOpacity" key="[0.0, 1.0]" keyValue="[1.0, 0.5]" />
+        </Animation>
+        <Animation id="RowListUpAnimation"
+           duration="0.3"
+           repeat="false"
+           easeFunction="linear">
+            <Vector2DFieldInterpolator id="vUpTranslation" key="[0.0, 1.0]" keyValue="[[75.0, 550.0], [75.0, 950.0]]" fieldToInterp="VideoRowListControl.translation"/>
+            <Vector2DFieldInterpolator id="vUpContentTranslation" key="[0.0, 1.0]" keyValue="[[0.0, -400.0], [0.0, 0.0]]" fieldToInterp="gContentDetails.translation"/>
+            <FloatFieldInterpolator id="fUpContentOpacity" key="[0.0, 1.0]" keyValue="[0.5, 1.0]" />
+        </Animation>
+    </children>
+</component>

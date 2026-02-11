@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<component name="SeriesPage" extends="Group">
+    <script type="text/brightscript" uri="pkg:/components/pages/SeriesPage/SeriesPage.brs"/>
+    <script type="text/brightscript" uri="pkg:/source/helpers/HelpFuncs.brs"/>
+    <script type="text/brightscript" uri="pkg:/source/helpers/FocusHandler.brs"/>
+    <script type="text/brightscript" uri="pkg:/source/helpers/ContentHelper.brs"/>
+    <script type="text/brightscript" uri="pkg:/source/helpers/Globals.brs"/>
+    <script type="text/brightscript" uri="pkg:/source/helpers/EventHelper.brs"/>
+
+    <interface>
+        <field id="initialize" type="boolean" value="false" alwaysnotify="true" onChange="onInitialize"/>
+        <field id="seriesContent" type="AssocArray" alwaysNotify="true" onChange="OnContentChange"/>
+        <field id="datarray" type="AssocArray" alwaysNotify="true"/>
+    </interface>
+    <children>
+        <Label id="lTitle" width="1200" translation="[75,50]" text="" horizAlign="left"/>
+        <Group>
+            <Label id="lNoItems" width="1920" height="1080" text="NO EPISODE FOUND!" maxLines="1" horizAlign="center" vertAlign="center" visible="false"/>
+        </Group>
+        <Group id="gPreLoader" visible="false">
+            <BusySpinner id="bsPreloader" translation="[880,420]" control="start" clockwise="true" spinInterval="0.8"/>
+            <Label id="lPreloader" translation="[0,600]" color="#FFFFFF" horizAlign="center" width="1920"/>
+        </Group>
+    </children>
+</component>

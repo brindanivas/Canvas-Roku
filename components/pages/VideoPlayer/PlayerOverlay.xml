@@ -1,0 +1,50 @@
+<component name="PlayerOverlay" extends="Group" initialFocus="hiddenLabel">
+    <script type="text/brightscript" uri="PlayerOverlay.brs" />
+
+    <script type="text/brightscript" uri="pkg:/source/managers/RegistryManager.brs" />
+    <script type="text/brightscript" uri="pkg:/source/helpers/HelpFuncs.brs" />
+
+    <interface>
+        <field id="key" type="assocArray" alwaysNotify="true" onChange="OnCustomPlayerKeyPress"/>
+        <field id="videoParams" type="node" alwaysNotify="true" onchange="OnVideoParamsChanged" />
+        <field id="rowlistVisible" type="boolean" value="false" alwaysNotify="true" />
+        <field id="isLive" type="boolean" value="false" alwaysNotify="true" onchange="IsLiveChanged"/>
+        <field id="action" type="assocArray" alwaysNotify="true" onchange="OnUserAction" />
+        <field id="seekingStatus" type="string" value="None" alwaysNotify="true" />
+        <field id="videoPlayerState" type="string" alwaysNotify="true" onChange="UpdateIconState"/>
+        <field id="videoPosition" type="integer" value="0" alwaysNotify="true" onChange="OnVideoPositionChanged" />
+        <field id="duration" type="integer" value="0" alwaysNotify="true" onChange="OnVideoDurationChanged"/>
+        <field id="seekPosition" type="integer" value="0" alwaysNotify="true" />
+        <field id="pauseVideo" type="boolean" alwaysNotify="true"/>
+        <field id="isTrailer" type="boolean" value="false" alwaysNotify="true" onChange="OnTrailerVideoPlay"/>
+    </interface>
+    <children>
+          <poster id="pVideoOverlayBackground" visible="true" width="1920" height="1080" loadWidth="1920" loadHeight="1080" loadDisplayMode="scaleToFit"
+            uri="pkg:/images/focus/video_overlay.png" />
+
+          <Group id="mainOverlayGroup" translation="[0, 0]">
+               <Group id="gPauseVideoOverlay" translation="[0, 0]">
+                 <LayoutGroup
+                     id="lgDetails"
+                     layoutDirection="vert"
+                     vertAlignment="top"
+                     itemSpacings="[10]"
+                     translation="[50, 134]"
+                     />
+                   <Group id="progress" translation="[160,829]">
+                      <Label id="leftProgressLabel" text="0.0" color="#AEB9C1" horizAlign="bottom" vertAlign="bottom" translation="[0, 0]"/>
+                      <Poster id="outlineRect" width="1320" height="12" uri="pkg:/images/focus/5pxRoundRect.9.png" translation="[127, 13]"/>
+                      <Poster id="progressRect" width="0" height="12" uri="pkg:/images/focus/5pxRoundRect.9.png" translation="[127, 13]"/>
+                      <Poster id="pSeekingDot" height="12" width="12" translation="[127, 13]" uri="pkg:/images/icons/dot.png"/>
+                      <Label id="rightProgressLabel" text="" color="#AEB9C1" horizAlign="bottom" vertAlign="bottom" translation="[1467,0]"/>
+                   </Group>
+                   <Poster id="pRewindIcon" width="48" height="48" loadwidth="48" loadheight="48" translation="[677, 879]" uri="pkg:/images/icons/rewind.png" visible="false"/>
+                   <Label id="lrewind" text="" height="48" color="#AEB9C1" horizAlign="center" vertAlign="center" translation="[735,879]"/>
+                   <Poster id="PlayPauseIcon" width="48" height="48" loadwidth="48" loadheight="48" translation="[936, 879]" uri="pkg:/images/icons/pause.png"/>
+                   <Label id="lPlayPause" text="Play" width="150" color="#AEB9C1" horizAlign="center" vertAlign="center" translation="[885,947]"/>
+                   <Label id="lfastforward" text="" height="48" color="#AEB9C1" horizAlign="center" vertAlign="center"  translation="[1137,879]"/>
+                   <Poster id="pForwardIcon" width="48" height="48" loadwidth="48" loadheight="48" translation="[1185, 879]" uri="pkg:/images/icons/fastforward.png" visible="false"/>
+               </Group>
+          </Group>
+    </children>
+  </component>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<component name="SearchPage" extends="Group">
+    <script type="text/brightscript" uri="pkg:/components/pages/SearchPage/SearchPage.brs"/>
+
+
+    <script type="text/brightscript" uri="pkg:/source/helpers/HelpFuncs.brs"/>
+    <script type="text/brightscript" uri="pkg:/source/helpers/FocusHandler.brs"/>
+    <script type="text/brightscript" uri="pkg:/source/helpers/ContentHelper.brs"/>
+    <script type="text/brightscript" uri="pkg:/source/helpers/Globals.brs"/>
+    <script type="text/brightscript" uri="pkg:/source/helpers/EventHelper.brs"/>
+
+    <interface>
+        <field id="initialize" type="boolean" value="false" alwaysnotify="true" onChange="onInitialize"/>
+        <field id="datarray" type="AssocArray" alwaysNotify="true"/>
+    </interface>
+
+    <children>
+        <Group>
+            <MiniKeyboard id = "miniKeyboard" showTextEditBox="false" lowerCase="false" translation="[100,180]"/>
+            <Label id="lSearchTitle" text="" translation="[705, 192]" horizAlign="left" vertAlign="center" />
+            <Label id="lSearchPlaceHolder" text="" translation="[705, 192]" horizAlign="left" vertAlign="center" />
+            <Label id="lNoItems" width="1200" translation="[705,300]" text="NO RESULTS FOUND!" maxLines="1" horizAlign="left" visible="false"/>
+        </Group>
+        <Group id="gPreLoader" visible="false">
+            <BusySpinner id="bsPreloader" translation="[1160,420]" control="start" clockwise="true" spinInterval="0.8"/>
+            <Label id="lPreloader" translation="[300,600]" color="#FFFFFF" horizAlign="center" width="1920"/>
+        </Group>
+        <Timer id="UpdateTimer" repeat="false" duration="10"/>
+        <Timer id="UpdateProgress" control="start" repeat="true" duration="60"/>
+  </children>
+</component>
