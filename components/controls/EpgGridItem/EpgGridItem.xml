@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--********** Copyright 2016 Roku Corp.  All Rights Reserved. **********-->
+<component name="EpgGridItem" extends="Group">
+    <script type="text/brightscript" uri="pkg:/components/controls/EpgGridItem/EpgGridItem.brs" />
+    <script type="text/brightscript" uri="pkg:/source/helpers/HelpFuncs.brs"/>
+    <script type="text/brightscript" uri="pkg:/source/helpers/FocusHandler.brs"/>
+    <interface>
+        <field id="itemContent" type="node" onChange="itemContentChanged" alwaysNotify="true"/>
+        <field id="focusPercent" type="float" onChange="onFocusPercentChange" />
+        <field id="gridHasFocus" type="boolean" onChange="onGridFocusChange"/>
+        <field id="itemHasFocus" type="boolean" onChange="onFocusChanged" alwaysNotify="true"/>
+    </interface>
+
+    <children>
+        <Group id="gridGrp">
+            <LayoutGroup id="gridItem" layoutDirection="horiz" itemSpacings="[10]">
+                <Poster id="channelIdentityPoster" width="100" height="140" uri="pkg:/images/focus/5pxRoundRect.9.png">
+                    <Label id="channelIdentity" width="90" height="130" horizAlign="center" vertAlign="center" maxLines="2" wrap="true" translation="[5,5]" />
+                </Poster>
+                <Poster id="channelLogoBg" width="226" height="140" uri="pkg:/images/focus/5pxRoundRect.9.png">
+                    <MaskGroup id="logoMask" maskUri = "pkg:/images/others/channel_mask.png" translation="[20,20]" >
+                        <Poster id="channelLogo" width="186" height="100" loadWidth="186" loadHeight="100" uri="pkg:/images/others/default_channel.png" loadingBitmapUri="pkg:/images/others/default_channel.png" failedBitmapUri="pkg:/images/others/default_channel.png" loadDisplayMode="scaleToZoom" />
+                    </MaskGroup>
+                </Poster>
+                <Group id="focusGrp">
+                    <LayoutGroup id="focusGrpLg" layoutDirection="horiz" itemSpacings="[10]">
+                        <Poster id="onNowBg" width="500" height="140" uri="pkg:/images/focus/5pxRoundRect.9.png">
+                            <Poster id="onNowFocusBg" width="500" height="140" opacity="0" uri="pkg:/images/focus/5pxRoundRect.9.png"/>
+                            <Poster id="onNowProgressFocusBg" width="1" height="140" opacity="0" uri="pkg:/images/focus/5pxRoundRect.9.png"/>
+                            <LayoutGroup id="onNowLg" layoutDirection="vert" itemSpacings="[7]" translation="[20,20]">
+                                <LayoutGroup id="onNowTimeLg" layoutDirection="horiz">
+                                    <Group id="onNowWatchingGrp"/>
+                                    <Group id="onNowTimeLabelGrp">
+                                        <Label id="focusedOnNowTimeLabel" text="" opacity="0"/>
+                                        <Label id="onNowTimeLabel" text="" />
+                                    </Group>
+                                </LayoutGroup>
+                                <Group id="onNowLabelGrp">
+                                    <Label id="focusedProgramName" width="450" opacity="0"/>
+                                    <Label id="programName" width="450"/>
+                                </Group>
+                            </LayoutGroup>
+                        </Poster>
+                        <Poster id="upNextBg" width="500" height="140" uri="pkg:/images/focus/5pxRoundRect.9.png">
+                            <LayoutGroup id="upNextLg" layoutDirection="vert" itemSpacings="[7]" translation="[20,20]">
+                                <LayoutGroup id="upNextTimeLg" layoutDirection="horiz">
+                                    <Label id="upNextTimeLabel" text="" width="450" />
+                                </LayoutGroup>
+                                <Label id="upNextProgramName" width="450"/>
+                            </LayoutGroup>
+                        </Poster>
+                    </LayoutGroup>
+                </Group>
+            </LayoutGroup>
+            <Poster id="focusRing" width="1356" height="140" uri="pkg:/images/focus/5pxRoundStroke.LT_GR.9.png" opacity="0"/>
+        </Group>
+    </children>
+</component>

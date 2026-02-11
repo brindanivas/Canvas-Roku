@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="PlayListNode" extends="ContentNode">
+    <interface>
+        <field id="_id" type="string"/>
+        <field id="TITLE" type="string"/>
+        <field id="sub_title" type="string"/>
+        <field id="is_show_separate" type="boolean"/>
+        <field id="Description" type="string"/>
+        <field id="short_description" type="string"/>
+        <field id="featured_image" type="string"/>
+        <field id="is_multi_levels" type="integer"/>
+        <field id="hasSubPlayList" type="boolean"/>
+        <field id="isExclusiveContent" type="boolean"/>
+        <field id="program_type" type="string"/>
+        <field id="poster_16_9_small" type="string"/>
+        <field id="poster_16_9" type="string"/>
+        <field id="poster_9_16" type="string"/>
+        <field id="poster_9_16_small" type="string"/>
+        <field id="content_type" type="string"/>
+        <field id="search_type" type="string"/>
+        <field id="vast_url_roku" type="string"/>
+        <field id="layout" type="string"/>
+        <field id="tabLayout" type="string"/>
+        <field id="tabId" type="integer"/>
+        <field id="videos_count" type="integer" />
+        <field id="series_count" type="integer" />
+        <field id="isFocused" type="boolean" value="false"/>
+        <field id="is_lock" type="boolean" value="false"/>
+        <field id="isselected" type="boolean" value="false"/>
+        <field id="childPlaylists" type="array"/>
+    </interface>
+</component>

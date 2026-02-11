@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--********** Copyright 2016 Roku Corp.  All Rights Reserved. **********-->
+<component name="EpgCategoryItem" extends="Group">
+    <script type="text/brightscript" uri="pkg:/components/controls/EpgCategoryItem/EpgCategoryItem.brs" />
+    <script type="text/brightscript" uri="pkg:/source/helpers/HelpFuncs.brs"/>
+    <script type="text/brightscript" uri="pkg:/source/helpers/FocusHandler.brs"/>
+    <interface>
+        <field id="itemContent" type="node" onChange="itemContentChanged" />
+        <field id="focusPercent" type="float" onChange="onFocusPercentChange" />
+        <field id="gridHasFocus" type="boolean" onChange="onGridFocusChange"/>
+        <field id="itemHasFocus" type="boolean" onChange="onFocusChanged" alwaysNotify="true"/>
+    </interface>
+
+    <children>
+        <Group id="categoryItemGrp">
+            <Label id="categoryName" width="300" />
+            <Label id="focusCategoryName" width="300" opacity="0"/>
+        </Group>
+    </children>
+</component>

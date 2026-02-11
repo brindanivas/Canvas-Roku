@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="MovieCardView" extends="Group" >
+    <script type="text/brightscript" uri="MovieCardView.brs"/>
+    <interface>
+        <field id="content" type="node" onChange="itemContentChanged" />
+        <field id="focusPercent" type="float" onChange="onFocusPercentChange"/>
+        <field id="gridHasFocus" type="boolean" onChange="onGridFocusChange"/>
+        <field id="itemHasFocus" type="boolean" onChange="onFocusChanged"/>
+        <field id="rowFocusPercent" type="float" onChange="onRowFocusPercentChange"/>
+        <field id="rowListHasFocus" type="boolean" onChange="onRowListFocusChange"/>
+    </interface>
+    <children>
+        <MaskGroup id="borderMask" maskUri = "pkg:/images/focus/movie-mask.png" translation="[0,0]" >
+            <Poster id="pMovie" width="292" height="438" loadWidth="292" loadHeight="438" uri="pkg:/images/others/default-movie.png" loadingBitmapUri="pkg:/images/others/default-movie.png" failedBitmapUri="pkg:/images/others/default-movie.png" loadDisplayMode="scaleToFit"/>
+            <Poster id="pVideoLock" Width="50" uri="pkg:/images/icons/icons8-lock-50.png" Height="50" LoadWidth="50" LoadHeight="50" loadDisplayMode="scaleToFit" visible="true" translation="[232,10]" opacity="1"/>
+        </MaskGroup>
+    </children>
+</component>

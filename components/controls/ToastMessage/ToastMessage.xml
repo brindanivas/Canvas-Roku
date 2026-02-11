@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="ToastMessage" extends="Group">
+    <script type="text/brightscript" uri="pkg:/components/controls/ToastMessage/ToastMessage.brs" />
+
+    <interface>
+        <field id="msgData" type="AssocArray" alwaysNotify="true" onChange="onMessageChanged"/>
+        <field id="quickHide" type="boolean" alwaysNotify="true" onChange="onQuickHideChanged"/>
+    </interface>
+
+    <children>
+        <Poster id="messageBackground" uri="pkg:/images/icons/rounded-rectangle-9.png">
+            <Poster id="messageIcon" loadDisplayMode="scaleToFit"/>
+            <Label id="message" wrap="false" maxLines="1" lineSpacing="0" horizAlign="left" vertAlign="center"/>
+        </Poster>
+        <Animation id="messageShowAnimation">
+          <FloatFieldInterpolator
+              key="[0.11, 0.22, 0.33, 0.44, 0.55, 0.66, 0.77, 0.88, 1]"
+              keyValue="[0.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0]"
+              fieldToInterp="messageBackground.opacity"/>
+        </Animation>
+    </children>
+</component>

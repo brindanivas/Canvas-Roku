@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="SideMenuItem" extends="Group" >
+  <script type="text/brightscript" uri="SideMenuItem.brs"/>
+
+  <interface>
+    <field id="itemContent" type="node"   onChange="itemContentChanged" />
+
+
+  </interface>
+
+  <children>
+    <Rectangle id="rItemBackground" height="84" width="384"/>
+    <LayoutGroup id="lgLabel" layoutDirection="horiz" horizAlignment="custom" vertAlignment="custom" itemSpacings="20" translation="[24,0]">
+          <Label id="lTitle" height="84" width="336" maxLines="1" horizAlign="left" vertAlign="center"/>
+    </LayoutGroup>
+  </children>
+</component>

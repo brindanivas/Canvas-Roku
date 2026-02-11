@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="VideoNode" extends="ContentNode">
+    <interface>
+        <field id="_id" type="integer"/>
+        <field id="channel_id" type="integer"/>
+        <field id="title" type="string"/>
+        <field id="duration" type="string"/>
+        <field id="autoplay" type="string"/>
+        <field id="source" type="string"/>
+        <field id="poster" type="string"/>
+        <field id="poster_16_9_small" type="string"/>
+        <field id="poster_16_9" type="string"/>
+        <field id="is_live" type="integer"/>
+        <field id="poster_9_16" type="string"/>
+        <field id="poster_9_16_small" type="string"/>
+        <field id="director" type="string"/>
+        <field id="episode" type="integer"/>
+        <field id="season" type="integer"/>
+        <field id="actor1" type="string"/>
+        <field id="actor2" type="string"/>
+        <field id="actor3" type="string"/>
+        <field id="rating" type="string"/>
+        <field id="rating_source" type="string"/>
+        <field id="genres" type="string"/>
+        <field id="category" type="string"/>
+        <field id="hls_url" type="string"/>
+        <field id="vtt_url" type="string"/>
+        <field id="srt_url" type="string"/>
+        <field id="prerollUrl" type="string"/>
+        <field id="start_date_time" type="string"/>
+        <field id="end_date_time" type="string"/>
+        <field id="playDirectUrl" type="string"/>
+        <field id="liveVastUrl" type="string"/>
+        <field id="releaseDate" type="string"/>
+        <field id="playList_program_type" type="string"/>
+        <field id="program_type" type="string"/>
+        <field id="playList_content_type" type="string"/>
+        <field id="itemType" type="string"/>
+        <field id="trailerUrl" type="string"/>
+        <field id="is_lock" type="boolean" value="false"/>
+        <field id="currentDateTimeSecond" type="boolean"/>
+        <field id="limitedData" type="array"/>
+    </interface>
+</component>

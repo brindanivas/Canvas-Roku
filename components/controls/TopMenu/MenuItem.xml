@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<component name="MenuItem" extends="Group" >
+    <interface>
+
+        <field id="itemContent" type="node"   onChange="itemContentChanged" />
+        <field id="width"  type="float"  onChange="OnWidthChanged" />
+    </interface>
+
+    <script type="text/brightscript" uri="MenuItem.brs" />
+
+    <children>
+        <Label
+            id="title"
+            horizAlign = "center"
+            vertAlign = "center" height="36"/>
+            <Poster id="icon" translation="[0,0]" width="36" height="36" loadWidth="36" loadHeight="36" loadDisplayMode="scaleToFit" />
+
+    </children>
+</component>

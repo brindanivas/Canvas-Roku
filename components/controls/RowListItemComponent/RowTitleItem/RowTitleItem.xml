@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="RowTitleItem" extends="Group" >
+  <script type="text/brightscript" uri="RowTitleItem.brs"/>
+
+  <interface>
+    <field id="content" type="node" onChange="itemContentChanged" />
+  </interface>
+
+  <children>
+    <Label id="rowLabel" height="42"  maxLines="1" vertAlign="center"/>
+  </children>
+</component>

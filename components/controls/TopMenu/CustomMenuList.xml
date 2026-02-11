@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+  <component name="CustomMenuList" extends="RowList">
+
+    <interface>
+		<field id="MenuItems" type="array" alwaysNotify="true" onChange="OnMenuItemChange"/>
+
+        <field id="SetFirstItemSelected" type="boolean" value="false" alwaysNotify="true"/>
+        <field id="MenuFocusedHeight" type="integer" alias = "focusIndicator.height"/>
+        <field id="MenuFocusedWidth" type="integer" value="0" alias = "focusIndicator.width"/>
+        <field id="MenuFocusedYPos" type="float" value="50"/>
+        <field id="lastKeyPress" type="string" />
+        <field id="longKeyPressed" type="boolean" value="false"/>
+        <field id="keyPress" type="assocArray" alwaysNotify="true"/>
+        <field id="OutSidekeyPass" type="string" alwaysNotify="true" onChange="OnOutSidekeyPass"/>
+        <field id="totalWidth" type="integer"/>
+        <field id="removeSelectedFocus" type="boolean" alwaysNotify="true" onChange="OnRemoveSelectedFocus"/>
+        <field id="customRowItemSelected" type="array" alwaysNotify="true" />
+        <field id="customRowItemFocus" type="intArray" alwaysNotify="true" onChange="OnCustomRowItemFocusChange" />
+    </interface>
+
+      <script type="text/brightscript" uri="CustomMenuList.brs" />
+
+    <children>
+        <Label id="test" horizAlign="center" vertAlign="center" visible="false" height="36"/>
+        <Rectangle
+          id="focusIndicator"
+          width="10"
+          height="6"
+          translation="[0,40]"
+          visible="false" />
+
+      <Animation
+          id = "TranAnimation"
+          repeat = "false"
+          duration = "0.2"
+          easeFunction = "linear">
+          <Vector2DFieldInterpolator
+            id="VectorTranAnimation"
+            fieldToInterp = "focusIndicator.translation"
+            key = "[0,1]"/>
+          <FloatFieldInterpolator
+            id="FloatFieldInterpolator"
+            fieldToInterp = "focusIndicator.width"
+            key = "[0,1]"/>
+      </Animation>
+
+      <Timer
+          id="ItemFocusChangeTimer"
+          repeat="false"
+          duration="0.1"/>
+    </children>
+</component>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="VideoCardView" extends="Group" >
+    <script type="text/brightscript" uri="VideoCardView.brs"/>
+    <script type="text/brightscript" uri="pkg:/source/helpers/HelpFuncs.brs"/>
+    <interface>
+        <field id="content" type="node" onChange="itemContentChanged" />
+        <field id="focusPercent" type="float" onChange="onFocusPercentChange"/>
+        <field id="gridHasFocus" type="boolean" onChange="onGridFocusChange"/>
+        <field id="itemHasFocus" type="boolean" onChange="onFocusChanged"/>
+        <field id="rowFocusPercent" type="float" />
+        <field id="rowListHasFocus" type="boolean" onChange="onRowListFocusChange"/>
+    </interface>
+    <children>
+        <Group id="gVideo" visible="false">
+            <MaskGroup id="borderMask" maskUri = "pkg:/images/focus/horiz-mask.png" translation="[0,0]" >
+                <Poster id = "pVideo" width="560" height="315" loadWidth="560" loadHeight="315" uri="pkg:/images/others/default_poster.png" loadingBitmapUri="pkg:/images/others/default_poster.png" failedBitmapUri="pkg:/images/others/default_poster.png" loadDisplayMode="scaleToFit">
+                    <Poster id="pVideoLock" Width="50" uri="pkg:/images/icons/icons8-lock-50.png" Height="50" LoadWidth="50" LoadHeight="50" loadDisplayMode="scaleToFit" visible="true" translation="[500,10]" opacity="1"/>
+                    <Poster id="pPlayicon" translation="[230,107.5]" width="100" height="100" loadWidth="100" loadHeight="100" loadDisplayMode="scaleToZoom" uri="pkg:/images/icons/play-icon.png" visible="true" opacity="0"/>
+                    <Poster id="pShadow" width="560" height="129" loadWidth="560" loadHeight="129"
+                    loadDisplayMode="scaleToZoom" uri="pkg:/images/focus/horizontal_card_shadow.png"
+                    translation="[0,186]" visible="true"/>
+                    <Label id="lProgressDuration" vertAlign="center" height="36" maxLines="1" visible="false" />
+                    <Poster id="rProgressBar" width="550" height="9" uri="pkg:/images/focus/5pxRoundRect.9.png" translation="[5,299]"/>
+                    <Poster id="rProgressBarFill" width="0" height="9" uri="pkg:/images/focus/5pxRoundRect.9.png" loadDisplayMode="scaleToFill" translation="[5,299]"/>
+                </Poster>
+            </MaskGroup>
+        </Group>
+        <Group id="gSeries" visible="false">
+            <MaskGroup id="borderMaskSeries" maskUri = "pkg:/images/focus/horiz-mask.png" translation="[0,0]" >
+                <Poster id = "pSeries" width="560" height="315" loadWidth="560" loadHeight="315" uri="pkg:/images/others/default_poster.png" loadingBitmapUri="pkg:/images/others/default_poster.png" failedBitmapUri="pkg:/images/others/default_poster.png" loadDisplayMode="scaleToFit">
+                    <Poster id="pSeriesLock" Width="50" uri="pkg:/images/icons/icons8-lock-50.png" Height="50" LoadWidth="50" LoadHeight="50" loadDisplayMode="scaleToFit" visible="true" translation="[500,10]" opacity="1"/>
+                    <Poster id="pShadowSeries" width="560" height="129" loadWidth="560" loadHeight="129"
+                    loadDisplayMode="scaleToZoom" uri="pkg:/images/focus/horizontal_card_shadow.png"
+                    translation="[0,186]" visible="true"/>
+                </Poster>
+            </MaskGroup>
+        </Group>
+        <LayoutGroup id="lgInformation" translation="[0,345]" layoutDirection="vert" itemSpacings="[12]">
+            <Label id="lTitle" vertAlign="center" horizAlign="left" maxLines="2" wrap="true" lineSpacing="0" width="520"/>
+            <Label id="lDescription" vertAlign="center" horizAlign="left" width="520" maxLines="1"/>
+        </LayoutGroup>
+    </children>
+</component>

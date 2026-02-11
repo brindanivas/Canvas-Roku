@@ -1,0 +1,21 @@
+<?xml version = "1.0" encoding = "utf-8" ?>
+
+
+
+<component name = "DynamicItem" extends = "Group" >
+
+  <interface >
+      <field id="itemContent" type="node" onChange="itemContentChanged" />
+      <field id="focusPercent" type="float" onChange="onFocusPercentChange" />
+      <field id="gridHasFocus" type="boolean" onChange="onGridFocusChange"/>
+      <field id="itemHasFocus" type="boolean" onChange="onFocusChanged" alwaysNotify="true"/>
+      <field id="rowFocusPercent" type="float" onChange="onRowFocusPercentChange"/>
+      <field id="rowListHasFocus" type="boolean" onChange="onRowListFocusChange"/>
+  </interface>
+
+  <script type = "text/brightscript" uri = "DynamicItem.brs"/>
+
+  <children >
+  </children>
+
+</component>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<component name="CustomDialog" extends="Group">
+    <script type="text/brightscript" uri="CustomDialog.brs"/>
+    <interface>
+        <field id="selectedButton" type="integer" alwaysNotify="true"/>
+        <field id="contentNode" type="node" alwaysNotify="true" onChange="onContentNodeChanged"/>
+        <field id="yesBtnText" type="string" alias="lYes.text" alwaysNotify="true"/>
+        <field id="noBtnText" type="string" alias="lNo.text" alwaysNotify="true"/>
+    </interface>
+    <children>
+        <Group id="gConfirmation" opacity="0">
+            <Rectangle id="rBackground" width="1920" height="1080" color="#000000" opacity="0.8"/>
+            <Poster id="gPurchaseSection" width="1120" height="800" uri="pkg:/images/focus/R42Filled_152px_fhd.9.png" opacity="0.7">
+                <Poster id="pImage" uri="pkg:/images/assets/poster_fhd.png" width="560" height="315" loadDisplayMode="scaleToZoom" />
+                <Group id="gDialog" translation="[50,0]">
+                    <Label id="ltitle" width="1020"  horizAlign="center" color="#FFFFFF"/>
+                    <Label id="lMessage" width="1020"  wrap="true" maxLines="3" lineSpacing="0" horizAlign="center" color="#FFFFFF"/>
+                    <Label id="lConsentMsg" width="1020" text="Do you want to watch this video, then please give permission." horizAlign="center" color="#FFFFFF"/>
+                </Group>
+                <LayoutGroup id="lgButtons" layoutDirection="horiz" itemSpacings="25">
+                    <Poster id="bNo" uri="pkg:/images/focus/filled.9.png" width="200" height="80">
+                        <Label id="lNo" text="" width="200" height="80" horizAlign="center" vertAlign="center"/>
+                    </Poster>
+                    <Poster id="bYes" uri="pkg:/images/focus/filled.9.png" width="200" height="80">
+                        <Label id="lYes" text="" width="200" height="80" horizAlign="center" vertAlign="center"/>
+                    </Poster>
+                </LayoutGroup>
+            </Poster>
+            <SequentialAnimation id="showAnimation">
+                <Animation duration="0.1" easeFunction="linear">
+                    <FloatFieldInterpolator key= "[0, 0.3, 0.6, 1]" keyValue= "[0.3, 0.5, 0.7, 0.9]" fieldToInterp="rBackground.opacity"/>
+                </Animation>
+                <Animation duration="0.3" easeFunction="linear">
+                    <FloatFieldInterpolator key= "[0, 0.3, 0.6, 1]" keyValue= "[0.3, 0.5, 0.7, 1]" fieldToInterp="gConfirmation.opacity"/>
+                </Animation>
+            </SequentialAnimation>
+        </Group>
+    </children>
+</component>

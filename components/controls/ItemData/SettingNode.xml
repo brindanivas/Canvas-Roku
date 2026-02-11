@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="SettingNode" extends="ContentNode">
+    <interface>
+        <field id="_id" type="integer"/>
+        <field id="TITLE" type="string"/>
+        <field id="Description" type="string"/>
+        <field id="type" type="string"/>
+        <field id="Url" type="string"/>
+        <field id="isSelected" type="boolean" value="false"/>
+        <field id="isFocused" type="boolean" value="false"/>
+    </interface>
+</component>

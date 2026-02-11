@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="TabNode" extends="ContentNode">
+    <interface>
+        <field id="_id" type="integer"/>
+        <field id="Title" type="string"/>
+        <!-- <field id="Backgroud" type="string"/> -->
+        <field id="layout" type="string"/>
+        <field id="Icon" type="string"/>
+        <field id="Settings" type="array" value="[]"/>
+    </interface>
+</component>

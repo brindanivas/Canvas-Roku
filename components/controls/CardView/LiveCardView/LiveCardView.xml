@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="LiveCardView" extends="Group" >
+  <script type="text/brightscript" uri="LiveCardView.brs"/>
+  <script type="text/brightscript" uri="pkg:/source/helpers/HelpFuncs.brs"/>
+  <interface>
+        <field id="content" type="node" onChange="itemContentChanged" />
+        <field id="focusPercent" type="float" onChange="onFocusPercentChange"/>
+        <field id="gridHasFocus" type="boolean" onChange="onGridFocusChange"/>
+        <field id="itemHasFocus" type="boolean" onChange="onFocusChanged"/>
+        <field id="rowFocusPercent" type="float" onChange="onRowFocusPercentChange"/>
+        <field id="rowListHasFocus" type="boolean" onChange="onRowListFocusChange"/>
+  </interface>
+
+  <children>
+    <MaskGroup id="borderMask" maskUri = "pkg:/images/focus/horiz-mask.png" translation="[0,0]" >
+        <Poster id = "pLive" width="560" height="315" loadWidth="560" loadHeight="315" uri="pkg:/images/others/default_poster.png" loadingBitmapUri="pkg:/images/others/default_poster.png" failedBitmapUri="pkg:/images/others/default_poster.png" loadDisplayMode="scaleToFit">
+            <Poster id="pPlayicon" translation="[230,107.5]" width="100" height="100" loadWidth="100" loadHeight="100" loadDisplayMode="scaleToZoom" uri="pkg:/images/icons/play-icon.png" visible="true" opacity="0"/>
+            <Poster id="pShadow" width="560" height="129" loadWidth="560" loadHeight="129"
+                    loadDisplayMode="scaleToZoom" uri="pkg:/images/focus/horizontal_card_shadow.png"
+                    translation="[0,186]" visible="true"/>
+            <Group id="gBadge" visible="true">
+              <Poster id="pBadge" width="36" height="36" loadWidth="36" loadHeight="36" loadDisplayMode="scaleToZoom" />
+              <Label id="lBadgeText" vertAlign="center" height="36" maxLines="1" translation="[46,0]"/>
+            </Group>
+            <Poster id="rProgressBar" width="550" height="9" uri="pkg:/images/focus/5pxRoundRect.9.png" translation="[5,299]"/>
+            <Poster id="rProgressBarFill" width="0" height="9" uri="pkg:/images/focus/5pxRoundRect.9.png" loadDisplayMode="scaleToFill" translation="[5,299]"/>
+        </Poster>
+    </MaskGroup>
+    <LayoutGroup id="lgInformation" translation="[0,345]" layoutDirection="vert" itemSpacings="[12]">
+        <Label id="lTitle" vertAlign="center" width="520" maxLines="1"/>
+        <Label id="lDescription" vertAlign="center" width="520" maxLines="1"/>
+    </LayoutGroup>
+
+
+  </children>
+</component>
