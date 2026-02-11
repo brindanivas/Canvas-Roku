@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="DynamicRowList" extends="RowList" >
+  <script type="text/brightscript" uri="DynamicRowList.brs"/>
+
+  <interface>
+    <field id="playlistContent" type="node" onChange="OnContentChanged" />
+    <field id="paginationContent" type="array" onChange="onPaginationContent"/>
+    <field id="paginationRowContent" type="array" onChange="onPaginationRowContent"/>
+    <field id="paginationRowFocusIndex" type="integer"/>
+    <field id="width" type="integer" />
+    <field id="lastFocusItem" type="array" />
+  </interface>
+
+  <children>
+  </children>
+</component>

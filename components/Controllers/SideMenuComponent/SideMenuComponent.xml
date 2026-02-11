@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<component name="SideMenuComponent" extends="MarkupGrid">
+    <script type="text/brightscript" uri="SideMenuComponent.brs"/>
+
+
+    <script type="text/brightscript" uri="pkg:/source/helpers/HelpFuncs.brs"/>
+    <script type="text/brightscript" uri="pkg:/source/helpers/FocusHandler.brs"/>
+    <script type="text/brightscript" uri="pkg:/source/helpers/ContentHelper.brs"/>
+
+    <interface>
+        <field id="lastKeyPress" type="string" />
+        <field id="jumpToFirst" type="boolean" alwaysnotify="true" onChange="OnJumpToFirst" />
+        <field id="longKeyPressed" type="boolean" value="false"/>
+    </interface>
+
+    <children>
+        <Timer id="ItemFocusChangeTimer" repeat="false" duration="0.3"/>
+  </children>
+</component>

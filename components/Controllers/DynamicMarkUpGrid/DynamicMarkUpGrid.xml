@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="DynamicMarkUpGrid" extends="MarkUpGrid" >
+  <script type="text/brightscript" uri="DynamicMarkUpGrid.brs"/>
+
+  <interface>
+    <field id="playlistContent" type="node" onChange="OnContentChanged" />
+    <field id="paginationContent" type="array" onChange="onPaginationContent"/>
+    <field id="columns" type="integer" />
+    <field id="rows" type="integer" />
+  </interface>
+
+  <children>
+  </children>
+</component>
