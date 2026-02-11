@@ -1,0 +1,24 @@
+<component name="MMTask" extends="Task">
+  <interface>
+    <field id="video" type="node" alwaysNotify="true" />
+    <field id="config" type="assocarray" alwaysNotify="true" />
+    <field id="customConfig" type="assocarray" alwaysNotify="true" />    
+    <field id="contentMetadata" type="assocarray" alwaysNotify="true" />
+    <field id="customTags" type="assocarray" alwaysNotify="true" />
+    <field id="error" type="assocarray" alwaysNotify="true"/>
+    <field id="adError" type="assocarray" alwaysNotify="true"/>
+    <field id="view" type="String" alwaysNotify="true" />
+    <field id="exit" type="Boolean" alwaysNotify="true" />
+    <field id="mmAdData" type="assocarray" alwaysNotify="true" />
+    <field id="mmRafEvent" type="assocarray" alwaysNotify="true"/>
+    <field id="sdk_version" type="String" alwaysNotify="true" />
+    <field id="seekThreshold" type="Integer" alwaysNotify="true"/>
+    <field id="codecs" type="assocarray" alwaysNotify="true" />
+    <field id="isVideoLive" type="Boolean" alwaysNotify="true" />
+    <field id="requestInfo" type="assocarray" alwaysNotify="true" />
+  </interface>
+  <script type="text/brightscript" uri="pkg:/components/MMSmartStream/MMSmartStreamWrapper.brs" />
+  <script type="text/brightscript" uri="pkg:/components/MMSmartStream/MMSmartStreamEngine.brs" />
+  <script type="text/brightscript" uri="pkg:/components/MMSmartStream/MMSmartStreamRokuPlugin.brs" />
+  <script type="text/brightscript" uri="pkg:/components/MMSmartStream/Utilities.brs" />
+</component>
