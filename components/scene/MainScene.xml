@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2016 Roku Corp. All Rights Reserved. -->
+<component name="MainScene" extends="Scene">
+    <script type="text/brightscript" uri="pkg:/components/scene/MainScene.brs"/>
+    <script type="text/brightscript" uri="pkg:/source/helpers/HelpFuncs.brs"/>
+    <script type="text/brightscript" uri="pkg:/source/helpers/Globals.brs"/>
+    <script type="text/brightscript" uri="pkg:/source/helpers/FocusHandler.brs"/>
+    <script type="text/brightscript" uri="pkg:/source/managers/cmpManager.brs" />
+    <script type="text/brightscript" uri="pkg:/source/managers/FontManager.brs"/>
+    <script type="text/brightscript" uri="pkg:/source/managers/RegistryManager.brs"/>
+    <script type="text/brightscript" uri="pkg:/source/managers/ViewStackManager.brs"/>
+    <script type="text/brightscript" uri="pkg:/source/helpers/ContentHelper.brs"/>
+    <script type="text/brightscript" uri="pkg:/source/helpers/EventHelper.brs"/>
+    <script type="text/brightscript" uri="pkg:/source/analytics/SegmentAnalyticsConnector.brs" />
+    <interface>
+        <!-- To Outside -->
+        <field id="outRequest" type="AssocArray"/>
+        <field id="sentLaunchCompleteEvent" type="boolean" alwaysNotify="true" onChange="sendAppLaunchCompleteBeacon"/>
+        <field id="sentAppDialogInitiateEvent" type="boolean" alwaysNotify="true" onChange="sendAppDialogInitiateBeacon" />
+        <field id="otLoaded" type="boolean" value="false" alwaysnotify="true" onChange="onOTSdkLoaded"/>
+        <field id="sentAppDialogCompleteEvent" type="boolean" alwaysNotify="true" onChange="sendAppDialogCompleteBeacon" />
+        <!-- From Inside -->
+        <field id="initialize" type="boolean" value="false" alwaysnotify="true" onChange="onInitialize"/>
+        <field id="IsUpdateData" type="boolean" value="false" alwaysnotify="true"/>
+        <field id="event" type="AssocArray" alwaysnotify="true"/>
+        <field id="deepLinkingContentId" type="string"/>
+        <field id="deepLinkingMediaType" type="string"/>
+        <field id="deeplinkMsg" type="string" alwaysNotify="true" onChange="ChangeDeeplinkDialogMessage"/>
+        <field id="deepLinkingLand" type="boolean" alwaysNotify="true" />
+        <field id="IsLoadingData" type="boolean" alwaysNotify="true"/>
+        <field id="backGroundVideo" type="string" alias="vpBackground.videoUrl"/>
+        <field id="IsStartFromBeginning" type="boolean" value="false" alwaysNotify="true" />
+        <field id="IsResumeVideo" type="boolean" value="false" alwaysNotify="true" />
+        <field id="IsStopUpdateProgressTimer" type="boolean" value="false" alwaysNotify="true" />
+        <field id="segmentEvent" type="assocArray" onChange="onSegmentEventChanged"/>
+        <function name="HandleDeepLinkingInputEvent"/>
+        <function name="ShowHideLoader"/>
+        <function name="ShowHideMenu"/>
+        <function name="PlayVideo"/>
+        <function name="StartVideo"/>
+        <function name="PlayDeepLinkVideo"/>
+        <function name="StartStopBackgroundPlayer"/>
+        <function name="ShowTopRightCornerToast"/>
+        <function name="ShowPreferenceCenter"/>
+        <function name="tabPlayListPagination"/>
+        <function name="tabPlayListDataPagination"/>
+        <function name="ShowHidePopUpDialog"/>
+        <function name="IsDeepLinkFlow"/>
+    </interface>
+    <children>
+        <Group id="gPageContainer">
+            <Rectangle width="1920" height="1080" opacity="1" color="#101010"/>
+            <Poster id="backGround" width="1920" height="1080" loadWidth="1920" loadHeight="1080" loadDisplayMode="scaleToZoom" />
+            <BackgroundPlayer id="vpBackground" visible="false"/>
+            <Poster id="rBackgroundOpacity" width="1920" height="1080" loadDisplayMode="scaleToZoom" uri="pkg:/images/focus/background_video_overlay.png"  opacity="1" visible="false"/>
+        </Group>
+        <Group id="gPreLoader" visible="false">
+            <Rectangle width="1920" height="1080" opacity="1" color="#000000"/>
+            <BusySpinner id="bsPreloader" translation="[860,420]" control="start" clockwise="true" spinInterval="0.8"/>
+            <Label id="lPreloader" translation="[0,600]" color="#FFFFFF" horizAlign="center" width="1920"/>
+        </Group>
+        <Group id="gTopMenu" visible="false">
+            <Poster uri="pkg:/images/others/Fader.png" width="1920" height="210" loadDisplayMode="scaleToZoom"/>
+            <Poster uri="pkg:/images/brand/MenuLogo.png" width="131" height="76" loadDisplayMode="scaleToFit" translation="[85,38]"/>
+        </Group>
+        <Group id="gVideoPlayer"/>
+        <Group id ="gLoader" />
+        <SegmentAnalyticsTask id="segmentAnalyticsTask" />
+        <Timer id="toastMessageTimer" repeat="true" duration="4" />
+        <Timer id="loaderTimer" repeat="false" duration="2"/>
+        <Group id="gPaginationLoader" visible="false">
+            <BusySpinner id="bsPaginationloader" translation="[930,920]" control="start" clockwise="true" spinInterval="0.8"/>
+        </Group>
+        <Label id="noPlaylist" text="No data available." width="1920" height="1080" vertAlign="center" horizAlign="center" visible="false"/>
+    </children>
+</component>
